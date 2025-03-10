@@ -24,7 +24,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>Academic Project Page</title>
+  <title>FLPrivacy</title>
   <link rel="icon" type="image/x-icon" href="static/images/attack.png">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -43,6 +43,127 @@
   <script src="static/js/bulma-carousel.min.js"></script>
   <script src="static/js/bulma-slider.min.js"></script>
   <script src="static/js/index.js"></script>
+
+    <style>
+      .tree-container {
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+          align-items: left;
+          position: relative;
+      }
+      .level {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: space-evenly;
+          margin: 0px 20px 60px 0px;
+          position: relative;
+      }
+      .node {
+          width: 60px;
+          height: 40px;
+          color: black;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          font-size: 14px;
+          font-weight: bold;
+          border-radius: 5px;
+          border: 2px solid;
+          position: relative;
+      }
+      .root-node {
+          background-color: rgba(133, 199, 242, 0.85);
+          border-color: #85C7F2; 
+      }
+      .op-gia {
+          background-color: rgba(255, 165, 0, 0.35);
+          border-color: rgba(255, 165, 0, 0.7);
+      }
+      .op-gia-works {
+          background-color: rgba(255, 165, 0, 0.1);
+          border-color: rgba(218, 100, 91, 0.5);
+      }
+      .gen-gia {
+          background-color: rgba(0, 0, 255, 0.2); 
+          border-color: rgba(0, 0, 255, 0.4); 
+      }
+      .gen-gia-category {
+          background-color: rgba(0, 0, 255, 0.1); 
+          border-color: rgba(0, 0, 255, 0.3); 
+      }
+      .gen-gia-works {
+          background-color: rgba(0, 0, 255, 0.05); 
+          border-color: rgba(0, 0, 255, 0.2); 
+      }
+      .ana-gia {
+          background-color: rgba(128, 0, 128, 0.2); 
+          border-color: rgba(128, 0, 128, 0.6);
+      }
+      .ana-gia-category {
+          background-color: rgba(128, 0, 128, 0.1); 
+          border-color: rgba(128, 0, 128, 0.5);
+      }
+      .ana-gia-works {
+          background-color: rgba(128, 0, 128, 0.05); 
+          border-color: rgba(128, 0, 128, 0.3);
+      }
+      .line {
+          position: absolute;
+          background-color: black;
+      }
+      .line.horizontal {
+          height: 2px;
+      }
+      .line.vertical {
+          width: 2px;
+      }
+
+      table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+      th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+            align-content: center;
+      }
+      th {
+          background-color: #f2f2f2;
+      }
+      .checkmark {
+          color: red;
+      }
+      .cross {
+          color: green;
+      }
+
+      .background-box {
+        background-color: #f0f0f0; /* 浅灰色背景 */
+            border: 2px solid #a9a9a9; /* 边框颜色 */
+            padding: 15px; /* 内边距 */
+            border-radius: 5px; /* 圆角 */
+            margin: 20px 0; /* 外边距 */
+            font-size: 1.2em; /* 加大字体 */
+        }
+
+        .image-container {
+            display: flex; /* 使用弹性盒布局 */
+            justify-content: center; /* 居中对齐 */
+            flex-wrap: wrap; /* 允许换行 */
+            margin: 20px 0; /* 外边距 */
+        }
+        .image-container img {
+            width: 40%; /* 设置每张图片的宽度为 48% */
+            height: auto; /* 保持比例 */
+            margin: 3%; /* 图片间距 */
+        }
+        
+  </style>
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=AM_HTMLorMML-full"></script>
 </head>
 <body>
 
@@ -52,70 +173,89 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <h1 class="title is-1 publication-title">Exploring the Vulnerabilities of Federated Learning: A Deep Dive into Gradient Inversion Attacks</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
-              <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
-                <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
-                  </span>
-                  </div>
+              <span class="author-block"> <a href="https://pengxin-guo.github.io/" target="_blank">Pengxin Guo</a><sup>1,*</sup>,</span>
+              <span class="author-block"> <a href="https://pengxin-guo.github.io/FLPrivacy/">Runxi Wang</a><sup>1,*</sup>,</span>
+              <span class="author-block"> <a href="https://scholar.google.com/citations?user=yTP1oqkAAAAJ&hl=zh-CN" target="_blank">Shuang Zeng</a><sup>1</sup>,</span>
+              <span class="author-block"> <a href="https://scholar.google.com/citations?user=EVpo9eQAAAAJ&hl=zh-CN" target="_blank">Jinjing Zhu</a><sup>2</sup>,</span>
+              <span class="author-block"> <a href="https://pengxin-guo.github.io/FLPrivacy/">Haoning Jiang</a><sup>3</sup>,</span>
+              <span class="author-block"> <a href="http://www.yanranwang.com/" target="_blank">Yanran Wang</a><sup>4</sup>,</span>
+              <span class="author-block"> <a href="https://yuyinzhou.github.io/" target="_blank">Yuyin Zhou</a><sup>5</sup>,</span>
+              <span class="author-block"> <a href="https://www.eee.hku.hk/~ffwang/" target="_blank">Feifei Wang</a><sup>1</sup>,</span>
+              <span class="author-block"> <a href="https://scholar.google.com.hk/citations?user=cVDF1tkAAAAJ&hl=en" target="_blank">Hui Xiong</a><sup>2</sup>,</span>
+              <span class="author-block"> <a href="https://liangqiong.github.io/" target="_blank">Liangqiong Qu</a><sup>1,&#8224;</sup></span>
+            </div>
 
-                  <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conferance name and year</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
-                  </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>The University of Hong Kong,</span>
+              <span class="author-block"><sup>2</sup>The Hong Kong University of Science and Technology (Guangzhou),</span>
+              <span class="author-block"><sup>3</sup>Southern University of Science and Technology,</span>
+              <span class="author-block"><sup>4</sup>Stanford University,</span>
+              <span class="author-block"><sup>5</sup>UC Santa Cruz</span>
+              <span class="eql-cntrb"><small><br><sup>*</sup>Equal Contribution</small></span>
+              <span class="eql-cntrb"><small><br><sup>&#8224;</sup>Corresponding Author</small></span>
+            </div>
 
-                  <div class="column has-text-centered">
-                    <div class="publication-links">
-                         <!-- Arxiv PDF link -->
-                      <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
-
-                    <!-- Supplementary PDF link -->
-                    <!-- <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span> -->
-
-                  <!-- Github link -->
-                  <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
-
-                <!-- ArXiv abstract Link -->
-                <!-- <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                    <!-- Arxiv PDF link -->
+                <span class="link-block">
+                  <a href="https://pengxin-guo.github.io/FLPrivacy/" target="_blank"
                   class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
-                    <i class="ai ai-arxiv"></i>
+                    <i class="fas fa-file-pdf"></i>
                   </span>
-                  <span>arXiv</span> -->
+                  <span>Paper</span>
                 </a>
               </span>
-            </div>
-          </div>
+
+              <!-- Supplementary PDF link -->
+              <!-- <span class="link-block">
+                <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                class="external-link button is-normal is-rounded is-dark">
+                <span class="icon">
+                  <i class="fas fa-file-pdf"></i>
+                </span>
+                <span>Supplementary</span>
+              </a>
+            </span> -->
+
+            <!-- Github link -->
+            <span class="link-block">
+              <a href="https://github.com/YOUR REPO HERE" target="_blank"
+              class="external-link button is-normal is-rounded is-dark">
+              <span class="icon">
+                <i class="fab fa-github"></i>
+              </span>
+              <span>Code</span>
+            </a>
+          </span>
+
+          <!-- Awesome link -->
+          <span class="link-block">
+            <a href="https://github.com/Pengxin-Guo/Awesome-Gradient-Inversion-Attacks" target="_blank"
+            class="external-link button is-normal is-rounded is-dark">
+            <span class="icon">
+              <i class="fas fa-file"></i>
+            </span>
+            <span>Awesome</span>
+          </a>
+        </span>
+
+          <!-- ArXiv abstract Link -->
+          <!-- <span class="link-block">
+            <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
+            class="external-link button is-normal is-rounded is-dark">
+            <span class="icon">
+              <i class="ai ai-arxiv"></i>
+            </span>
+            <span>arXiv</span>
+          </a>
+        </span> -->
+        </div>
+        </div>
         </div>
       </div>
     </div>
@@ -131,7 +271,9 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            Federated Learning (FL) has emerged as a promising privacy-preserving collaborative model training paradigm without sharing raw data. However, recent studies have revealed that private information can still be leaked through shared gradient information and attacked by Gradient Inversion Attacks (GIA). While many GIA methods have been proposed, a detailed analysis, evaluation, and summary of these methods are still lacking. Although various survey papers summarize existing privacy attacks in FL, few studies have conducted extensive experiments to unveil the effectiveness of GIA and their associated limiting factors in this context.
+            To fill this gap, we first undertake a systematic review of GIA and categorize existing methods into three types, i.e., <i>optimization-based</i> GIA (OP-GIA), <i>generation-based</i> GIA (GEN-GIA), and <i>analytics-based</i> GIA (ANA-GIA). Then, we comprehensively analyze and evaluate the three types of GIA in FL, providing insights into the factors that influence their performance, practicality, and potential threats. Our findings indicate that current GIA methods all have their limitations, and if users use the FL training protocol carefully, the privacy leakage of local data can be limited. Finally, we offer several guidelines to users when designing FL frameworks and protocols for better privacy protection and share some future research directions from the perspectives of attackers and defenders that we believe should be pursued.
+            We hope that our study can help researchers design more robust FL frameworks to defend against these attacks.
           </p>
         </div>
       </div>
@@ -139,6 +281,385 @@
   </div>
 </section>
 <!-- End paper abstract -->
+
+
+<!-- Paper content 1 -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div id="results-carousel">
+
+       <div class="columns is-centered has-text-centered">
+        <h2 class="title is-3">Overview</h2>
+       </div>
+
+       <div class="tree-container">
+        <!-- 第一层 -->
+        <div class="level">
+            <div class="node root-node">GIA</div>
+        </div>
+        <!-- 第二层 -->
+        <div class="level">
+            <!-- 节点1-->
+            <div style="position: relative;">
+                <div class="line horizontal" style="width: 10px; top: 50%; left: -10px;"></div>
+                <div class="line vertical" style="height: 206px; top: 50%; left: -10px;"></div>
+                <div class="node op-gia" style="width: 170px; height: 50px; text-align:left;">Optimization-based GIA <br> (OP-GIA)</div>
+            </div>
+            <!-- 节点2 -->
+            <div style="position: relative;">
+                <div class="line horizontal" style="width: 20px; top: 50%; left: -20px;"></div>
+                <div class="node gen-gia" style="width: 170px; height: 50px; text-align:left">Generation-based GIA <br> (GEN-GIA)</div>
+            </div>
+            <!-- 节点3 -->
+            <div style="position: relative;">
+              <div class="line horizontal" style="width: 10px; top: 50%; left: -10px;"></div>
+              <div class="node ana-gia" style="width: 170px; height: 50px; text-align:left;">Analytics-based GIA <br> (ANA-GIA)</div>
+          </div>
+        </div>
+        <!-- 第三层 -->
+        <div class="level">
+            <!-- 节点0 -->
+            <div style="position: relative;">
+              <div class="line horizontal" style="width: 20px; top: 65px; left: -20px;"></div>
+              <div class="node op-gia-works" style="width: 600px; height: 75px; margin-top: 30px;">
+                <p>
+                DLG [<a href="https://proceedings.neurips.cc/paper/2019/hash/60a6c4002cc7b29142def8871531281a-Abstract.html" target="_blank">1</a>], 
+                iDLG [<a href="https://arxiv.org/abs/2001.02610" target="_blank">2</a>], 
+                SAPAG [<a href=https://arxiv.org/abs/2009.06228" target="_blank">3</a>], 
+                IG [<a href="https://proceedings.neurips.cc/paper/2020/hash/c4ede56bbd98819ae6112b20ac6bf145-Abstract.html" target="_blank">4</a>], 
+                Geng et al. [<a href="https://arxiv.org/abs/2110.09074" target="_blank">5</a>], 
+                GradInversion [<a href="https://openaccess.thecvf.com/content/CVPR2021/html/Yin_See_Through_Gradients_Image_Batch_Recovery_via_GradInversion_CVPR_2021_paper.html" target="_blank">6</a>], 
+                CAFE [<a href="https://proceedings.neurips.cc/paper_files/paper/2021/hash/08040837089cdf46631a10aca5258e16-Abstract.html" target="_blank">7</a>], 
+                APRIL [<a href="https://openaccess.thecvf.com/content/CVPR2022/html/Lu_APRIL_Finding_the_Achilles_Heel_on_Privacy_for_Vision_Transformers_CVPR_2022_paper.html" target="_blank">8</a>], 
+                GradViT [<a href="https://openaccess.thecvf.com/content/CVPR2022/html/Hatamizadeh_GradViT_Gradient_Inversion_of_Vision_Transformers_CVPR_2022_paper.html" target="_blank">9</a>], 
+                Dimitrov et al. [<a href="https://openreview.net/forum?id=e7A0B99zJf" target="_blank">10</a>], 
+                ROG [<a href="https://www.usenix.org/conference/usenixsecurity23/presentation/yue" target="_blank">11</a>], 
+                CPA [<a href="https://proceedings.mlr.press/v202/kariyappa23a.html" target="_blank">12</a>], 
+                iLRG [<a href="https://openreview.net/forum?id=FIrQfNSOoTr" target="_blank">13</a>], 
+                Wang et al. [<a href="https://openreview.net/forum?id=s8cMuxI5gu" target="_blank">14</a>], 
+                HFG [<a href="https://ieeexplore.ieee.org/abstract/document/10604429" target="_blank">15</a>], 
+                SEER [<a href="https://openreview.net/forum?id=krx55l2A6G" target="_blank">16</a>], 
+                MGIC [<a href="https://arxiv.org/abs/2403.08284" target="_blank">17</a>], 
+                AFGI [<a href=https://arxiv.org/abs/2403.08383" target="_blank">18</a>], 
+                GI-SMN [<a href="https://link.springer.com/chapter/10.1007/978-981-97-5603-2_36" target="_blank">19</a>], 
+                GI-NAS [<a href="https://arxiv.org/abs/2405.20725" target="_blank">20</a>], 
+                DLG-FB [<a href="https://arxiv.org/abs/2409.17767" target="_blank">21</a>],
+                TGIAs-RO [<a href="https://ieeexplore.ieee.org/abstract/document/10848255" target="_blank">22</a>]
+              </p></div>
+            </div>
+            <!-- 节点1 -->
+            <div style="position: relative;">
+                <div class="line horizontal" style="width: 10px; top: 50%; left: -310px;"></div>
+                <div class="line vertical" style="height: 98px; top: 50%; left: -310px;"></div>
+                <div class="node gen-gia-category" style="width: 270px; margin-left: -300px;">Optimizing Latent Vector z</div>
+            </div>
+            <!-- 节点2 -->
+            <div style="position: relative;">
+                <div class="line horizontal" style="width: 20px; top: 50%; left: -320px;"></div>
+                <div class="node gen-gia-category" style="width: 270px; margin-left: -300px;">Optimizing Generator's Parameters W</div>
+            </div>
+            <!-- 节点3 -->
+            <div style="position: relative;">
+                <div class="line horizontal" style="width: 10px; top: 50%; left: -310px;"></div>
+                <div class="node gen-gia-category" style="width: 270px; margin-left: -300px;">Training an Inversion Generation Model</div>
+            </div>
+            <!-- 节点4 -->
+            <div style="position: relative;">
+                <div class="line horizontal" style="width: 20px; top: 50%; left: -320px;"></div>
+                <div class="line vertical" style="height: 50px; top: 50%; left: -310px;"></div>
+                <div class="node ana-gia-category" style="width: 270px; margin-left: -300px;">Manipulating Model Architecture</div>
+            </div>
+            <!-- 节点5 -->
+            <div style="position: relative;">
+              <div class="line horizontal" style="width: 10px; top: 50%; left: -310px;"></div>
+              <div class="node ana-gia-category" style="width: 270px; margin-left: -300px;">Manipulating Model Parameters</div>
+            </div>
+        </div>
+        <!-- 第四层 -->
+        <div class="level">
+            <!-- 节点0 -->
+            <div style="position: relative;">
+                <div style="height: 70px; margin-top: 45px; margin-left: -360px;"></div>
+            </div>
+            <!-- 节点1 -->
+            <div style="position: relative;">
+              <div class="line horizontal" style="width: 60px; top: 50%; left: -350px;"></div>
+              <div class="node gen-gia-works" style="width: 270px; margin-left: -290px; top: 3px;">
+                <p>
+                  GIAS [<a href="https://proceedings.neurips.cc/paper/2021/hash/fa84632d742f2729dc32ce8cb5d49733-Abstract.html" target="_blank">23</a>], 
+                  GGL [<a href="https://openaccess.thecvf.com/content/CVPR2022/html/Li_Auditing_Privacy_Defenses_in_Federated_Learning_via_Generative_Gradient_Leakage_CVPR_2022_paper.html" target="_blank">24</a>], 
+                  GIFD [<a href="https://openaccess.thecvf.com/content/ICCV2023/html/Fang_GIFD_A_Generative_Gradient_Inversion_Method_with_Feature_Domain_Optimization_ICCV_2023_paper.html" target="_blank">25</a>]
+              </p></div>
+          </div>
+          <!-- 节点2 -->
+          <div style="position: relative;">
+              <div class="line horizontal" style="width: 60px; top: 75%; left: -350px;"></div>
+              <div class="node gen-gia-works" style="width: 270px; margin-left: -290px; top: 12px;">
+                <p>
+                  GRNN [<a href="https://dl.acm.org/doi/abs/10.1145/3510032" target="_blank">26</a>], 
+                  CI-Net [<a href="https://openaccess.thecvf.com/content/ICCV2023/html/Zhang_Generative_Gradient_Inversion_via_Over-Parameterized_Networks_in_Federated_Learning_ICCV_2023_paper.html" target="_blank">27</a>], 
+                  GIRG [<a href="https://ieeexplore.ieee.org/abstract/document/10495167" target="_blank">28</a>]
+              </p></div>
+          </div>
+          <!-- 节点3 -->
+          <div style="position: relative;">
+              <div class="line horizontal" style="width: 60px; top: 95%; left: -350px;"></div>
+              <div class="node gen-gia-works" style="width: 270px; margin-left: -290px; top: 20px;">
+                <p>
+                  LTI [<a href="https://proceedings.mlr.press/v216/wu23a.html" target="_blank">29</a>], 
+                  GLFA [<a href="https://ieeexplore.ieee.org/abstract/document/10229091" target="_blank">30</a>]
+                </p></div>
+          </div>
+          <!-- 节点4 -->
+          <div style="position: relative;">
+              <div class="line horizontal" style="width: 60px; top: 120%; left: -350px;"></div>
+              <div class="node ana-gia-works" style="width: 270px; margin-left: -290px; top: 29px;">
+                <p>
+                  Robbing the Fed [<a href="https://openreview.net/forum?id=fwzUgo0FM9v&ref=morioh.com&utm_source=morioh.com" target="_blank">31</a>], 
+                  LOKI [<a href="https://ieeexplore.ieee.org/abstract/document/10646724" target="_blank">32</a>]
+                </p></div>
+          </div>
+          <!-- 节点5 -->
+          <div style="position: relative;">
+            <div class="line horizontal" style="width: 60px; top: 110%; left: -350px;"></div>
+            <div class="node ana-gia-works" style="width: 270px; height: 50px; margin-left: -290px; top: 33px;">
+              <p>
+                Pasquini et al. [<a href="https://dl.acm.org/doi/abs/10.1145/3548606.3560557" target="_blank">33</a>], 
+                Fishing [<a href="https://proceedings.mlr.press/v162/wen22a.html" target="_blank">34</a>], 
+                Trap Weights [<a href="https://ieeexplore.ieee.org/abstract/document/10190537" target="_blank">35</a>], 
+                MKOR [<a href="https://openaccess.thecvf.com/content/WACV2024/html/Wang_Maximum_Knowledge_Orthogonality_Reconstruction_With_Gradients_in_Federated_Learning_WACV_2024_paper.html" target="_blank">36</a>]
+              </p></div>
+          </div>
+        </div>
+      </div>
+
+      <p>Figure 1. Taxonomy of existing GIA methods. The existing GIA methods can be divided into three types: optimization-based GIA (<b>OP-GIA</b>), which works by minimizing the distance between received gradients and gradients computed from dummy data; generation-based GIA (<b>GEN-GIA</b>), which utilizes a generator to reconstruct input data; and analytics-based GIA (<b>ANA-GIA</b>), which aims to recover input data in closed form. Moreover, GEN-GIA can be further divided into three categories: optimizing the latent vector z, optimizing the generator’s parameters W, and training an inversion generation model. ANA-GIA can be further divided into two categories: manipulating model architecture and manipulating model parameters. We also provide a public repository to continually track developments in this fast-evolving field: <a href="https://github.com/Pengxin-Guo/Awesome-Gradient-Inversion-Attacks" target="_blank">Awesome-Gradient-Inversion-Attacks</a>. </p>
+  
+      </div>  
+  </div>
+</div>
+</section>
+<!-- End Paper content 1 -->
+
+
+<!-- Paper content 2 -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div id="results-carousel">
+      <div class="columns is-centered has-text-centered">
+        <h2 class="title is-3">Experimental Results<br></h2>
+       </div>
+
+      Table 1. Comparison of different types of GIA methods in terms of influence factors, reconstruction results, and extra reliance of each type of method. Influence factors include batch size, image resolution, model training state, the number of the same labels in one batch data, network architecture, and practical FedAvg with multiple local training steps. Reconstruction results include whether the reconstruction results are the original inputs and the visual quality of the reconstruction results.
+      <table style="text-align: center;">
+        <thead>
+            <tr>
+                <th rowspan="2">Taxonomy</th>
+                <th></th>
+                <th colspan="6">Influence Factors</th>
+                <th colspan="2">Reconstruction Results</th>
+                <th rowspan="2">Extra Reliance</th>
+            </tr>
+            <tr>
+                <th></th>
+                <th>Batch Size</th>
+                <th>Image Resolution</th>
+                <th># Same Label</th>
+                <th>Model Training State</th>
+                <th>Network Architecture</th>
+                <th>Practical FedAvg</th>
+                <th>Original Inputs?</th>
+                <th>Visual Quality</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>OP-GIA</td>
+                <td>-</td>
+                <td class="checkmark">&#10003;</td>
+                <td class="checkmark">&#10003;</td>
+                <td class="checkmark">&#10003;</td>
+                <td class="checkmark">&#10003;</td>
+                <td class="checkmark">&#10003;</td>
+                <td class="checkmark">&#10003;</td>
+                <td>Yes</td>
+                <td>Low</td>
+                <td>No</td>
+            </tr>
+            <tr>
+                <td rowspan="3">GEN-GIA</td>
+                <td>Opti. Lat. Vec.</td>
+                <td class="cross">&#10005;</td>
+                <td class="cross">&#10005;</td>
+                <td class="cross">&#10005;</td>
+                <td class="cross">&#10005;</td>
+                <td class="cross">&#10005;</td>
+                <td class="cross">&#10005;</td>
+                <td>No</td>
+                <td>High</td>
+                <td>Trained Generator</td>
+            </tr>
+            <tr>
+                <td>Opti. Gen. Para.</td>
+                <td class="checkmark">&#10003;</td>
+                <td class="checkmark">&#10003;</td>
+                <td class="checkmark">&#10003;</td>
+                <td class="checkmark">&#10003;</td>
+                <td class="checkmark">&#10003;</td>
+                <td class="checkmark">&#10003;</td>
+                <td>Yes</td>
+                <td>Middle</td>
+                <td>Sigmoid Activation</td>
+            </tr>
+            <tr>
+                <td>Train. Inv. Mod.</td>
+                <td class="checkmark">&#10003;</td>
+                <td class="checkmark">&#10003;</td>
+                <td class="checkmark">&#10003;</td>
+                <td class="cross">&#10005;</td>
+                <td class="checkmark">&#10003;</td>
+                <td class="checkmark">&#10003;</td>
+                <td>Yes</td>
+                <td>Low</td>
+                <td>Auxiliary Dataset</td>
+            </tr>
+            <tr>
+                <td rowspan="2">ANA-GIA</td>
+                <td>Manip. Mod. Arch.</td>
+                <td class="cross">&#10005;</td>
+                <td class="cross">&#10005;</td>
+                <td class="cross">&#10005;</td>
+                <td class="cross">&#10005;</td>
+                <td class="cross">&#10005;</td>
+                <td class="cross">&#10005;</td>
+                <td>Yes</td>
+                <td>High</td>
+                <td>Malicious Server</td>
+            </tr>
+            <tr>
+                <td>Manip. Mod. Para.</td>
+                <td class="cross">&#10005;</td>
+                <td class="checkmark">&#10003;</td>
+                <td class="cross">&#10005;</td>
+                <td class="checkmark">&#10003;</td>
+                <td class="checkmark">&#10003;</td>
+                <td class="cross">&#10005;</td>
+                <td>Yes</td>
+                <td>Middle</td>
+                <td>Malicious Server</td>
+            </tr>
+        </tbody>
+    </table>
+  
+      <h2 class="title"> Key Findings</h2>
+      <div class="background-box"><b>Takeaway 1:</b> OP-GIA has no additional reliance, but its performance is not satisfactory and is affected by many factors. Larger batch size, higher image resolution, more complicated network architecture, better model training state, and more same labels in one batch lead to worse OP-GIA performance.</div>
+      <div class="image-container">
+        <img src="static/images/SSIM.png" alt="fig">
+        <img src="static/images/SSIM_cifar100_various_arch.png" alt="fig">
+      </div>
+      <p style="margin-top: -40px;">Figure 2. <i>left.</i> Reconstruction results of IG evaluated on models in different training states on various datasets with different image resolutions and batch sizes. <i>right.</i> Reconstruction results of IG with different network architectures on the CIFAR-100 dataset. The shaded region represents the standard deviation. These results show that a larger batch size, higher image resolution, more complicated network architecture, and better model training state lead to worse OP-GIA performance.</p>
+      
+      <div class="background-box"><b>Takeaway 2:</b> GEN-GIA has many dependencies, which makes it pose a minimal threat to FL. Some GEN-GIA methods (i.e., optimizing latent vector z) can only achieve semantic-level recovery and heavily rely on the pre-trained generator. Other GEN-GIA methods (i.e., optimizing generator's parameters W and training an inversion model) can perform pixel-level attacks, but they have strong dependencies, such as reliance on the Sigmoid function and an auxiliary dataset.</div>
+      
+      <div>
+        <img src="static/images/ggl_vis_imagenet_cifar100.png" alt="fig">
+      </div>
+      <p>Figure 3. Reconstruction results of GGL. (a)-(c) Reconstruction results on the ImageNet dataset: (a) with different batch sizes and model training states; (b) under practical FedAvg scenario; (c) with random Gaussian noise. The ground truth for (b) and (c) is similar to (a) and is omitted. (d) Reconstruction results on the CIFAR-100 dataset with a batch size of one and an untrained model. These results show that when optimizing the latent vector z, GEN-GIA can generate semantically similar images and is not affected by the factors influencing OP-GIA. However, it heavily relies on the pre-trained generator and only can achieve semantic-level recovery.</p>
+
+      <div class="image-container">
+        <img src="static/images/CI-Net-SSIM.png" alt="fig">
+        <img src="static/images/CI-Net-bs.png" alt="fig">
+      </div>
+      <p style="margin-top: -40px;">Figure 4. <i>left.</i> Reconstruction results of CI-Net evaluated on ResNet-18 with different activation functions on various datasets with different batch sizes. <i>right.</i> Reconstruction results of CI-Net on ImageNet with different resolutions under the Sigmoid activation function. These results show that GEN-GIA with optimizing the generator's parameters W is affected by the factors that influence OP-GIA. Moreover, it only works when the target model adopts the Sigmoid activation function and fails with other activation functions.</p>
+
+      <div class="image-container">
+        <img src="static/images/LTI-model.png" alt="fig">
+        <img src="static/images/LTI-resolution.png" alt="fig">
+      </div>
+      <p style="margin-top: -40px;">Figure 5. <i>left.</i> Reconstruction results of LTI evaluated on different models with different training states on CIFAR-10 with different batch sizes. <i>right.</i> Reconstruction results of LTI on different datasets with different resolutions on LeNet. These results show that when training an inversion generation model, GEN-GIA can achieve pixel-level attacks but is influenced by most of the factors that affect OP-GIA, except for the model's training state.</p>
+
+
+      <div class="background-box"><b>Takeaway 3:</b> ANA-GIA can achieve satisfactory attack performance but is easily detected and defended against by clients.</div>
+      
+      Table 2. The number of reconstruction images of Robbing the Fed with 1000 bins on different batch sizes. It shows that ANA-GIA, when manipulating model architecture, can achieve great attack performance irrespective of batch size, image resolution, or model training state, provided it adopts a relatively large number of bins.
+      <table style="text-align: center; width: 60%; margin: 20px auto;">
+        <thead>
+            <tr>
+                <th>Batch Size</th>
+                <th>CIFAR-10</th>
+                <th>CIFAR-100</th>
+                <th>ImageNet</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>64/64</td>
+                <td>64/64</td>
+                <td>64/64</td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>63/64</td>
+                <td>64/64</td>
+                <td>64/64</td>
+            </tr>
+            <tr>
+                <td>32</td>
+                <td>60/64</td>
+                <td>61/64</td>
+                <td>64/64</td>
+            </tr>
+            <tr>
+                <td>64</td>
+                <td>60/64</td>
+                <td>60/64</td>
+                <td>61/64</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="image-container">
+      <img src="static/images/Fish.png" alt="fig">
+      <img src="static/images/fish_arch.png" alt="fig">
+    </div>
+    <p style="margin-top: -40px;">Figure 6. Reconstruction results of Fishing on ImageNet with different image resolutions and model training states, and network architectures. These results show that the attack performance of ANA-GIA, which manipulates model parameters, is not affected by batch size but worsens with larger image resolutions, worse model training states, and more complex model architectures.</p>
+
+    <div class="background-box"><b>Takeaway 4:</b> Attackers can breach privacy on low-resolution images but fail with high-resolution ones under PEFT. Moreover, smaller models are better at protecting privacy.</div>
+
+    <div class="image-container">
+      <img src="static/images/LoRA-all.png" alt="fig">
+      <img src="static/images/LoRA-model.png" alt="fig">
+    </div>
+    <p style="margin-top: -40px;">Figure 7. <i>left.</i> Reconstruction results of Eq. (7) evaluated on the ViT-base fine-tuned with LoRA on different datasets with different batch sizes.  <i>right.</i> Reconstruction results of Eq. (7) evaluated on different ViT architectures fine-tuned with LoRA on the CIFAR-100 dataset. These results show that attackers can breach privacy on low-resolution images but fail with high-resolution ones under PEFT. Moreover, smaller models are better at protecting privacy.</p>
+
+
+      </div>  
+  </div>
+</div>
+</section>
+<!-- End Paper content 2 -->
+
+
+<!-- Notes -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div id="results-carousel">
+
+       <div class="columns is-centered has-text-centered">
+        <h2 class="title is-3">Notes</h2>
+       </div>
+
+      <p style="width: 70%; margin: 0 auto;">Our code is available in this repository: <a href="https://github.com/1wrx1/GIA" target="">GIA</a>. For newly proposed attack methods, we encourage you to use our repository to compare their performance with other methods. Similarly, for newly proposed defense methods, we encourage you to use our repository to evaluate their defense capabilities. </p>
+  
+      </div>  
+  </div>
+</div>
+</section>
+<!-- End Notes -->
 
 
 <!--BibTex citation -->
@@ -149,7 +670,6 @@
     </div>
 </section>
 <!--End BibTex citation -->
-
 
   <footer class="footer">
   <div class="container">
