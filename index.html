@@ -272,8 +272,7 @@
         <div class="content has-text-justified">
           <p>
             Federated Learning (FL) has emerged as a promising privacy-preserving collaborative model training paradigm without sharing raw data. However, recent studies have revealed that private information can still be leaked through shared gradient information and attacked by Gradient Inversion Attacks (GIA). While many GIA methods have been proposed, a detailed analysis, evaluation, and summary of these methods are still lacking. Although various survey papers summarize existing privacy attacks in FL, few studies have conducted extensive experiments to unveil the effectiveness of GIA and their associated limiting factors in this context.
-            To fill this gap, we first undertake a systematic review of GIA and categorize existing methods into three types, i.e., <i>optimization-based</i> GIA (OP-GIA), <i>generation-based</i> GIA (GEN-GIA), and <i>analytics-based</i> GIA (ANA-GIA). Then, we comprehensively analyze and evaluate the three types of GIA in FL, providing insights into the factors that influence their performance, practicality, and potential threats. Our findings indicate that current GIA methods all have their limitations, and if users use the FL training protocol carefully, the privacy leakage of local data can be limited. Finally, we offer several guidelines to users when designing FL frameworks and protocols for better privacy protection and share some future research directions from the perspectives of attackers and defenders that we believe should be pursued.
-            We hope that our study can help researchers design more robust FL frameworks to defend against these attacks.
+            To fill this gap, we first undertake a systematic review of GIA and categorize existing methods into three types, i.e., <i>optimization-based</i> GIA (OP-GIA), <i>generation-based</i> GIA (GEN-GIA), and <i>analytics-based</i> GIA (ANA-GIA). Then, we comprehensively analyze and evaluate the three types of GIA in FL, providing insights into the factors that influence their performance, practicality, and potential threats. Our findings indicate that OP-GIA is the most practical attack setting despite its unsatisfactory performance, while GEN-GIA has many dependencies and ANA-GIA is easily detectable, making them both impractical. Finally, we offer a three-stage defense pipeline to users when designing FL frameworks and protocols for better privacy protection and share some future research directions from the perspectives of attackers and defenders that we believe should be pursued. We hope that our study can help researchers design more robust FL frameworks to defend against these attacks.
           </p>
         </div>
       </div>
@@ -625,9 +624,9 @@
       <img src="static/images/Fish.png" alt="fig">
       <img src="static/images/fish_arch.png" alt="fig">
     </div>
-    <p style="margin-top: -40px;">Figure 6. Reconstruction results of Fishing on ImageNet with different image resolutions and model training states, and network architectures. These results show that the attack performance of ANA-GIA, which manipulates model parameters, is not affected by batch size but worsens with larger image resolutions, worse model training states, and more complex model architectures.</p>
+    <p style="margin-top: -40px;">Figure 6. Reconstruction results of Fishing on ImageNet with different image resolutions and model training states, and network architectures. These results show that the attack performance of ANA-GIA, which manipulates model parameters, is not affected by batch size but worsens with larger image resolutions, worse model training states, and more complicated model architectures.</p>
 
-    <div class="background-box"><b>Takeaway 4:</b> Attackers can breach privacy on low-resolution images but fail with high-resolution ones under PEFT. Moreover, smaller models are better at protecting privacy.</div>
+    <div class="background-box"><b>Takeaway 4:</b> Attackers can breach privacy on low-resolution images but fail with high-resolution ones under PEFT. Moreover, smaller pre-trained models are better at protecting privacy.</div>
 
     <div class="image-container">
       <img src="static/images/LoRA-all.png" alt="fig">
@@ -635,6 +634,9 @@
     </div>
     <p style="margin-top: -40px;">Figure 7. <i>left.</i> Reconstruction results of Eq. (7) evaluated on the ViT-base fine-tuned with LoRA on different datasets with different batch sizes.  <i>right.</i> Reconstruction results of Eq. (7) evaluated on different ViT architectures fine-tuned with LoRA on the CIFAR-100 dataset. These results show that attackers can breach privacy on low-resolution images but fail with high-resolution ones under PEFT. Moreover, smaller models are better at protecting privacy.</p>
 
+    <br>
+    Based on our experimental findings, we provide a three-stage defense pipeline for users when designing FL frameworks and protocols for better privacy protection:
+    <div class="background-box"><b>Takeaway 5:</b> Three-stage defense pipeline: (1) avoid the Sigmoid activation function and use more complicated network architectures during network design, (2) adopt larger batch sizes and multi-step local training in the local training protocol, and (3) implement client-side validation to check for any potential malicious modification to the model architecture and parameters upon receiving the model from the server.</div>
 
       </div>  
   </div>
